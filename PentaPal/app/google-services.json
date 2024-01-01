@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "133247160038",
+    "project_id": "penta-pal",
+    "storage_bucket": "penta-pal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133247160038:android:b104e54b91828c81cdb527",
+        "android_client_info": {
+          "package_name": "com.example.pentapal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "133247160038-2mmifg01bglacs7i6rqv85m1gh10tbfi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE9CAWIgC0RDyTQ1AjUMtuByM7twcAhXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "133247160038-2mmifg01bglacs7i6rqv85m1gh10tbfi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

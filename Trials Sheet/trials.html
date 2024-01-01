@@ -1,0 +1,928 @@
+<!--HEADER SECTION-->
+<hr/>
+<!--header line one-->
+<div class="flexTape">
+    <div class="flex1">
+        <label>Name:</label>
+        <input type="text" name="attr_character_name" />
+    </div>
+    <div class="flex1">
+        <label>Race:</label>
+        <input type="text" name="attr_race" />
+    </div>
+    <div class="flex1">
+        <label>Class:</label>
+        <input type="text" name="attr_class" />
+    </div>
+    <div class="flex1">
+        <label>Gender:</label>
+        <input type="text" name="attr_gender" />
+    </div>
+</div>
+<br>
+
+<!--header line two-->
+<div class="flexTape">
+    <div class="flex1">
+        <label>Age:</label>
+        <input type="number" name="attr_age" min="0" id="biggy"/>
+    </div>
+    <div class="flex1">
+        <label>Speed:</label>
+        <input type="number" name="attr_speed"  min="0" id="biggy"/>
+    </div>
+    <div class="flex1">
+        <label>Kills:</label>
+        <input type="number" name="attr_kc"  min="0" id="biggy"/>
+    </div>
+    <div class="flex1">
+        <label>Level:</label>
+        <input type="number" name="attr_level"  min="1" id="biggy"/>
+    </div>
+    <div class="flex1">
+        <label>Class Level:</label>
+        <input type="number" name="attr_classLvl"  min="0" id="biggy"/>
+    </div>
+    <div class="flex1">
+        <label>Points:</label>
+        <input type="number" name="attr_points"  min="0" id="biggy"/>
+    </div>
+    <div class="flex1">
+        <button type="action" name="act_turnstart" class="funButt">Start Turn</button>
+    </div>
+</div>
+<br>
+
+<!--STATS/RESOURCES SECTION-->
+<hr/>
+<!-- stats/resources flex -->
+<div class="flexTape2">
+
+    <!--stats flex-->
+    <div class="flex1">
+        <h2>Stats</h2>
+
+        <!-- the strength skill-->
+        <div class="three-col">
+            <div class="col1">
+                <label class="str">Strength</label>
+                <input type="text" name='attr_str' class='sheet-short' value="5">
+            </div>
+            <div class="col2">
+                <label class="str">STR Mod</label>
+                <input type="hidden" name="attr_str-mod_s" value="0"/>
+                <input type="text" name="attr_str-mod" class='sheet-short' value="@{str-mod_s}" disabled="true"/>
+            </div>
+            <div class="col3">
+                <label class="str">Roll</label>
+                <button type='roll' name='roll_testattack' value='&{template:default} {{name=Strength}} {{result=[[1d20 + @{str-mod}]]}}'></button>
+            </div>
+        </div>
+        <br>
+
+        <!-- the vitality skill-->
+        <div class="three-col">
+            <div class="col1">
+                <label class="vit">Vitality</label>
+                <input type="text" name='attr_vit' class='sheet-short' value="5">
+            </div>
+            <div class="col2">
+                <label class="vit">VIT Mod</label>
+                <input type="hidden" name="attr_vit-mod_s" value="0"/>
+                <input name="attr_vit-mod" type="text" value="@{vit-mod_s}" disabled="true" class='sheet-short'/>
+            </div>
+            <div class="col3">
+                <label class="vit">Roll</label>
+                <button type='roll' name='roll_testattack' value='&{template:default} {{name=Vitality}} {{result=[[1d20 + @{vit-mod}]]}}'></button>
+            </div>
+        </div>
+        <br>
+
+        <!-- the dexterity skill-->
+        <div class="three-col">
+            <div class="col1">
+                <label class="dex">Dexterity</label>
+                <input type="text" name='attr_dex' class='sheet-short' value="5">
+            </div>
+            <div class="col2">
+                <label class="dex">DEX Mod</label>
+                <input type="hidden" name="attr_dex-mod_s" value="0"/>
+                <input name="attr_dex-mod" type="text" value="@{dex-mod_s}" disabled="true" class='sheet-short'/>
+            </div>
+            <div class="col3">
+                <label class="dex">Roll</label>
+                <button type='roll' name='roll_testattack' value='&{template:default} {{name=Dexterity}} {{result=[[1d20 + @{dex-mod}]]}}'></button>
+            </div>
+        </div>
+        <br>
+
+        <!-- the intelligence skill-->
+        <div class="three-col">
+            <div class="col1">
+                <label class="int">Intelligence</label>
+                <input type="text" name='attr_int' class='sheet-short' value="5">
+            </div>
+            <div class="col2">
+                <label class="int">INT Mod</label>
+                <input type="hidden" name="attr_int-mod_s" value="0"/>
+                <input name="attr_int-mod" type="text" value="@{int-mod_s}" disabled="true" class='sheet-short'/>
+            </div>
+            <div class="col3">
+                <label class="int">Roll</label>
+                <button type='roll' name='roll_testattack' value='&{template:default} {{name=Intelligence}} {{result=[[1d20 + @{int-mod}]]}}'></button>
+            </div>
+        </div>
+        <br>
+
+        <!-- the environment skill-->
+        <div class="three-col">
+            <div class="col1">
+                <label class="env">Environment</label>
+                <input type="text" name='attr_env' class='sheet-short' value="5">
+            </div>
+            <div class="col2">
+                <label class="env">ENV Mod</label>
+                <input type="hidden" name="attr_env-mod_s" value="0"/>
+                <input name="attr_env-mod" type="text" value="@{env-mod_s}" disabled="true" class='sheet-short'/>
+
+                <!--Hidden "none" mod-->
+                <input hidden name="attr_nun-mod_s" value="0"/>
+            </div>
+            <div class="col3">
+                <label class="env">Roll</label>
+                <button type='roll' name='roll_testattack' value='&{template:default} {{name=Environment}} {{result=[[1d20 + @{env-mod}]]}}'></button>
+            </div>
+        </div>
+    </div>
+
+    <!--resources flex-->
+    <div class="flex1">
+        <h2>Resources</h2>
+
+        <!--DC, main hand, off hand-->
+        <div class="three-col">
+            <div class="col1">
+                <label>DC</label>
+                <input class="sheet-short" type="text" name="attr_dc"  />
+            </div>
+            <div class="col2">
+                <label>Main Hand</label>
+                <input class="sheet-short" type="text" name="attr_main-hit" />
+            </div>
+            <div class="col3">
+                <label>Off Hand</label>
+                <input class="sheet-short" type="text" name="attr_off-hit" />
+            </div>
+
+        </div>
+
+        <!--Class Pool and LB-->
+        <br>
+        <div class="three-col">
+            <div class="col1">
+                <label>Class Pool</label>
+                <input class='sheet-short' type="number" name="attr_class-pool" id="biggy" />
+            </div>
+            <div class="col2">
+                <label>Main Damage</label>
+                <input class="sheet-short" type="text" name="attr_main-dice" id="biggy"/>
+            </div>
+            <div class="col3">
+                <label>Off Damage</label>
+                <input class="sheet-short" type="text" name="attr_off-dice" id="biggy"/>
+            </div>
+            <div class="col3">
+                <label>Limit Break</label>
+                <input class='sheet-short' type="number" name="attr_lb" min="0" max="20"/><span>/20</span>
+            </div>
+        </div>
+
+        <!--Stamina Resource Boxes-->
+        <br>
+        <input name="attr_stam-color" type="hidden" class="stam-color" value="">
+        <div class="three-col">
+            <div class="col1">
+                <label class="stam-colored">Stamina</label>
+                <input class='sheet-short' type="number" min="0" name="attr_stamina" />
+
+            </div>
+            <div class="col2">
+                <input type="hidden" name="attr_max-stamina_s" value="0"/>
+                <label class="stam-colored">Max Stamina</label>
+                <input class='sheet-short' type="text" name="attr_max-stamina" value="@{max-stamina_s}" disabled="true"/>
+            </div>
+            <div class="col3">
+                <!-- <label class="stam-colored">Stamina Stat</label>
+                <select class="sheet-dtype" name="attr_stam-stat">
+                    <option value="0" selected="selected">STR</option>
+                    <option value="1">DEX</option>
+                </select> -->
+            </div>
+            <div class="col3">
+                <h6>Dex?</h6>
+                <input type="checkbox" value="1" name="attr_stam-color">
+            </div>
+        </div>
+
+        <!--Mana Resource Boxes-->
+        <br>
+        <div class="three-col">
+            <div class="col1">
+                <label class="int">Mana</label>
+                <input type="number" name="attr_mana" min="0" class='sheet-short'/>
+
+            </div>
+            <div class="col2">
+                <input type="hidden" name="attr_max-mana_s" value="0"/>
+                <label class="int">Max Mana</label>
+                <input class='sheet-short' type="text" name="attr_max-mana" value="@{max-mana_s}" disabled="true"/>
+            </div>
+        </div>
+
+        <!--Regen Box and Initiative Box-->
+        <br>
+        <div class="three-col">
+            <div class="col1">
+                <input type="hidden" name="attr_regen_s" value="0"/>
+                <label class="env">Regen</label><input class='sheet-short' type="text" name="attr_regen" value="@{regen_s}" disabled="true"/>
+            </div>
+
+            <div class="col2">
+                <input type="hidden" name="attr_initiative_s" value="1"/>
+                <label class="dex">Initiative</label><input class='sheet-short' type="text" name="attr_initiative" value="@{initiative_s}" disabled="true"/>
+            </div>
+
+            <div class="col3">
+                <label class="dex">Roll</label><button type="roll" name="roll_initiative" value="&{template:default} {{name=Initiative}} {{result=[[1d20 + @{initiative} &{tracker}]]}}"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--SKILLS/COOLDOWNS SECTION-->
+<hr/>
+<!--skills/cooldowns flex-->
+<div class="flexTape">
+    <!--skills flex-->
+    <div class="flex7">
+        <h2>Skills</h2>
+        <fieldset class="repeating_skills">
+            <!--Shortened Skill-->
+            <div>
+                <div class="attack-format flexTape">
+                    <div class="flex3">
+                        <h5>Ex</h5>
+                        <input type="checkbox" class="switch-hide" name="attr_skill-hide">
+                    </div>
+                    <div class="flex3">
+                        <h5>Name</h5>
+                        <input type="text" name="attr_skill-name" placeholder="Skill"/>
+                    </div>
+                    <div class="flex3">
+                        <h5>Attack</h5>
+                        <input type="hidden" name="attr_hitTotal_s" value="0" />
+                        <input disabled="true" type="text" name="attr_hit-total" value="@{hitTotal_s}" class="sheet-short" />
+                    </div>
+                    <div class="flex3">
+                        <h5>Damage</h5>
+<!--                        <input type="hidden" name="attr_dmg-express_s" value="0"/>-->
+                        <input readonly type="text" name="attr_dmgExpress" />
+                    </div>
+                    <div class="flex3">
+                        <h5>Use</h5>
+                        <button type="action" name="act_use-skill" class="funButt2">&#9858;</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--Full Skill Details-->
+            <div class="long">
+
+                <!--flex tape for expanded skills section-->
+                <div class="flexTape">
+
+                    <!--big section 1 inside flex-->
+                    <input type="checkbox" class="switch-hide" name="attr_skill-hide" hidden="true">
+
+
+                    <div class="attack-format flex2">
+                        <label>Attack</label>
+                        <input class="sheet-short"  type="text" name="attr_hit-bonus" value="0" />
+                        <select name="attr_hit-hand" class="sheet-dtype">
+                            <option value="main" selected>Main</option>
+                            <option value="off">Off</option>
+                        </select><span>Hand</span>
+
+                        <label>Damage</label>
+                        <input type="text" name="attr_dmg" placeholder="i.e. 2d10" class="shorty" />
+                        <select name="attr_dmg-stat" class="sheet-dtype">
+                            <option value="str" selected>STR</option>
+                            <option value="vit">VIT</option>
+                            <option value="dex">DEX</option>
+                            <option value="int">INT</option>
+                            <option value="env">ENV</option>
+                            <option value="nun">NONE</option>
+                        </select>
+                        <br>
+                        <input type="text" name="attr_dmg-type" placeholder="Unaspected" class="shorty" />
+                        <br>
+                        <br>
+                        <span>Weapon Dice </span><input type="checkbox" name="attr_weapon-toggle" value="1" />
+                        <span> x </span><input type="text" class="sheet-short" name="attr_weapon-count" value="1"/>
+                        <br>
+                        <br>
+                        <label>Cost</label>
+                        <div class="flexTape">
+                            <div class="3colh">
+                                <div class="col1">
+                                    <h5 class="dex">Stamina</h5>
+                                    <input type="text" class="sheet-short2" name="attr_stamina-cost" value="0" />
+                                </div>
+                                <div class="col1">
+                                    <h5>Pool</h5>
+                                    <input type="text" class="sheet-short2" name="attr_class-cost" value="0"/>
+                                </div>
+                            </div>
+                            <div class="3colh">
+                                <div class="col1">
+                                    <h5 class="int">Mana</h5>
+                                    <input type="text" class="sheet-short2" name="attr_mana-cost" value="0" />
+                                </div>
+                                <div class="col1">
+                                    <h5>Cooldown</h5>
+                                    <input type="text" class="sheet-short2" name="attr_cooldown" value="0"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--big section 2 inside flex-->
+                    <div class="attack-format flex2">
+                        <label>Description</label>
+                        <textarea name="attr_skill-des" rows="20" cols="28"></textarea>
+                    </div>
+
+                </div>
+            </div>
+
+        </fieldset>
+    </div>
+    <!--cooldowns flex-->
+    <div class="flex8">
+        <div class="cooldowns">
+            <h2>Cooldowns</h2>
+            <fieldset class="repeating_cooldowns">
+                <input type="text" name="attr_cooldownName" title="Cooldown Name" placeholder="Cooldown Name" />
+                <input type="number" name="attr_turns" value="0">
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+
+
+<!--SKILL TREE SECTION-->
+<hr/>
+<h2>Skill Trees</h2>
+<!--skill tree flex-->
+<div class="flexTape2">
+    <!--str skills flex-->
+    <div class="flex0">
+        <div class="three-colh">
+            <div class="col4">
+                <label class="str">Swords: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_swords" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="str">Snake Swords: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_snakeSwords" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="str">Hook Swords: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_hookSwords" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="str">Axes: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_axes" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="str">Lances/Spears: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_lancesSpears" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="str">Scythes: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_scythes" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="str">Hammers: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_hammers" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="str">Shields: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_shields" min="0" max="10" value="0"> 
+            </div>
+        </div>
+    </div>
+
+    <!--dex skills flex-->
+    <div class="flex0">
+        <div class="three-colh">
+            <div class="col4">
+                <label class="dex">Daggers/Claws: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_daggersClaws" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="dex">Fist Cuffs: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_fistCuffs" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="dex">Whips: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_whips" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="dex">Meteor Hammers: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_meteorHammers" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="dex">Throwing Weapons: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_throwingWeapons" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="dex">Bows/Crossbows: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_bowsCrossbows" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="dex">Guns: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_guns" min="0" max="10" value="0"> 
+            </div>
+        </div>
+    </div>
+
+    <!--int skills flex-->
+    <div class="flex0">
+        <div class="three-colh">
+            <div class="col4">
+                <label class="int">Black Magic: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_blackMagic" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="int">White Magic: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_whiteMagic" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="int">Green Magic: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_greenMagic" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="int">Summoning: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_summoning" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="int">Time Magic: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_timeMagic" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="int">Void Magic: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_voidMagic" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="int">Blood Magic: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_bloodMagic" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="int">Demonology: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_demonology" min="0" max="10" value="0"> 
+            </div>
+        </div>
+        <div class="three-colh">
+            <div class="col4">
+                <label class="int">Soul Magic: </label>
+            </div>
+            <div class="col1">
+                <input type="number" name="attr_soulMagic" min="0" max="10" value="0"> 
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+
+<!--ROLL TEMPLATES SECTION-->
+<rolltemplate class="sheet-rolltemplate-skill">
+    <div class="sheet-template-container">
+        <h1>{{name}}</h1>
+        <div class="sheet-results">
+            <h4>Attack = {{attack}}</h4>
+            <h4>Damage = {{damage}} {{dmg-type}}</h4>
+        </div>
+    </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-notif">
+    <div class="sheet-template-container">
+        <h1>Alert!</h1>
+        <div class="sheet-results">
+            <h4>{{message}}</h4>
+        </div>
+    </div>
+</rolltemplate>
+
+<script type="text/worker">
+
+    <!--Turn Start Button-->
+    on("clicked:turnstart", function() {
+
+        //Lowers all cooldowns by 1 or deletes them
+        getSectionIDs("cooldowns", function(idarray) {
+            for(let i=0; i < idarray.length; i++) {
+
+                getAttrs([`repeating_cooldowns_${idarray[i]}_turns`], function(value) {
+
+                    let newValue = parseInt(value[`repeating_cooldowns_${idarray[i]}_turns`]) -1;
+                    if (newValue >= 0) {
+                        setAttrs({[`repeating_cooldowns_${idarray[i]}_turns`]:newValue});
+                    }
+                    else {
+                        removeRepeatingRow("repeating_cooldowns_" + idarray[i]);
+                    }
+                });
+            }
+        });
+
+        //Regenerates resources
+        getAttrs(['stamina','max-stamina_s','mana','max-mana_s','regen_s'], function(values) {
+            let regen = parseInt(values['regen_s'])||0;
+            let stam = parseInt(values.stamina)||0;
+            let mana = parseInt(values.mana)||0;
+            let newStam = stam + regen;
+            let newMana = mana + regen;
+            if (newStam < parseInt(values['max-stamina_s'])) {
+                setAttrs({ "stamina": newStam });
+            }
+            else {
+                setAttrs({ 'stamina': parseInt(values['max-stamina_s']) });
+            }
+            if (newMana < parseInt(values['max-mana_s'])) {
+                setAttrs({ "mana": newMana });
+            }
+            else {
+                setAttrs({ 'mana': parseInt(values['max-mana_s']) });
+            }
+        });
+    });
+
+    <!--Updates Stat Mods-->
+    const stats=["str","dex","vit","int","env"];
+    stats.forEach(function(stat) {
+        on("change:" + stat + " sheet:opened", function() {
+            getAttrs([stat], function (values) {
+                const stat_score = parseInt(values[stat])||0;
+                const stat_modifier = Math.floor(stat_score/4);
+                setAttrs({
+                    [stat + '-mod_s']: stat_modifier
+                });
+            });
+        });
+    });
+
+    <!--Updates Max Stamina-->
+    on("change:stam-color change:str-mod_s change:dex-mod_s sheet:opened", function () {
+        getAttrs(['stam-color','str-mod_s','dex-mod_s'], function(value) {
+            let stamMod = 0;
+            if (value['stam-color'] == "0"){
+                stamMod = parseInt(value['str-mod_s'])||0;
+            }
+            else{
+                stamMod = parseInt(value['dex-mod_s'])||0;
+            }
+            let maxStam = stamMod * 2 + 10;
+            setAttrs({
+                'max-stamina_s': maxStam
+            });
+        });
+    });
+
+    <!--Updates Max Stamina-->
+    on("change:int-mod_s sheet:opened", function() {
+        getAttrs(['int-mod_s'], function(value) {
+            const manaMod = parseInt(value['int-mod_s'])||0;
+            const maxMana = manaMod * 2 + 10;
+            setAttrs({
+                'max-mana_s': maxMana
+            });
+        });
+    });
+
+    <!--Updates Initiative-->
+    on("change:dex-mod_s", function() {
+        getAttrs(['dex-mod_s'], function(value) {
+            const dexMod = parseInt(value['dex-mod_s'])||0;
+            const initiative = Math.floor(dexMod / 4) + 1;
+            setAttrs({
+                'initiative_s': initiative
+            });
+        });
+    });
+
+    <!--Updates Regen-->
+    on("change:env-mod_s sheet:opened", function() {
+        getAttrs(['env-mod_s'], function(value) {
+            const envMod = parseInt(value['env-mod_s'])||0;
+            const regen = Math.floor(envMod / 2) + 8;
+            setAttrs({
+                'regen_s': regen
+            });
+        });
+    });
+
+    <!--Updates all skills when any weapon data changes-->
+    on('change:main-hit change:off-hit change:main-dice change:off-dice', function() {
+        getSectionIDs("skills", function(idarray) {
+            for(let i=0; i < idarray.length; i++) {
+
+                //Update Attack for current ID
+                getAttrs([`repeating_skills_${idarray[i]}_hit-bonus`,`repeating_skills_${idarray[i]}_hit-hand`,'main-hit','off-hit'], function(values) {
+                    let bonus = parseInt(values[`repeating_skills_${idarray[i]}_hit-bonus`])||0;
+                    let hand = values[`repeating_skills_${idarray[i]}_hit-hand`]||'';
+                    if (hand == "main") {
+                        setAttrs({ [`repeating_skills_${idarray[i]}_hitTotal_s`]: bonus + parseInt(values['main-hit']) + 2 });
+                    }
+                    else {
+                        setAttrs({ [`repeating_skills_${idarray[i]}_hitTotal_s`]: bonus + parseInt(values['off-hit']) + 2 });
+                    }
+                });
+
+                //Update Damage for current ID
+                getAttrs([`repeating_skills_${idarray[i]}_dmg`,`repeating_skills_${idarray[i]}_dmg-stat`,`repeating_skills_${idarray[i]}_dmg-type`,`repeating_skills_${idarray[i]}_weapon-toggle`,`repeating_skills_${idarray[i]}_weapon-count`,`main-dice`,`off-dice`,`repeating_skills_${idarray[i]}_hit-hand`], function(values) {
+                    let ability = values[`repeating_skills_${idarray[i]}_dmg-stat`]||"";
+                    getAttrs([`${ability}-mod_s`], function(value) {
+                        let bonus = parseInt(value[`${ability}-mod_s`])||0;
+                        let dmg = values[`repeating_skills_${idarray[i]}_dmg`]||"";
+                        let type = values[`repeating_skills_${idarray[i]}_dmg-type`]||"";
+                        let toggle = values[`repeating_skills_${idarray[i]}_weapon-toggle`];
+                        let hand = values[`repeating_skills_${idarray[i]}_hit-hand`]||'';
+                        let weaponDice = 0;
+                        if (hand == "main") {
+                            weaponDice = values['main-dice']||0;
+                        }
+                        else {
+                            weaponDice = values['off-dice']||0;
+                        }
+                        let multiplier = parseInt(values[`repeating_skills_${idarray[i]}_weapon-count`])||0;
+                        let damage = getDamage(dmg, bonus, type, toggle, hand, weaponDice, multiplier);
+                        setAttrs({ [`repeating_skills_${idarray[i]}_dmgExpress`]: damage });
+                    });
+                });
+            }
+        });
+    });
+
+    <!--Updates Attack Bonus-->
+    on("change:repeating_skills:hit-bonus change:repeating_skills:hit-hand", function () {
+        getAttrs(['repeating_skills_hit-bonus','repeating_skills_hit-hand','off-hit','main-hit'], function(values) {
+            let bonus = parseInt(values['repeating_skills_hit-bonus'])||0;
+            let hand = values['repeating_skills_hit-hand']||'';
+            if (hand == "main") {
+                setAttrs({ ['repeating_skills_hitTotal_s']: bonus + parseInt(values['main-hit']) + 2 });
+            }
+            else {
+                setAttrs({ ['repeating_skills_hitTotal_s']: bonus + parseInt(values['off-hit']) + 2 });
+            }
+        });
+    });
+
+    <!--Updates Total Damage String-->
+    on("change:repeating_skills:dmg change:repeating_skills:dmg-stat change:repeating_skills:dmg-type change:repeating_skills:weapon-toggle change:repeating_skills:weapon-count change:repeating_skills:hit-hand sheet:opened", function () {
+        getAttrs(['repeating_skills_dmg','repeating_skills_dmg-stat','repeating_skills_dmg-type','repeating_skills_weapon-toggle','repeating_skills_weapon-count','main-dice','off-dice','repeating_skills_hit-hand'], function(values) {
+            let ability = values['repeating_skills_dmg-stat']||"";
+            getAttrs([`${ability}-mod_s`], function(value) {
+                let bonus = parseInt(value[`${ability}-mod_s`])||0;
+                let dmg = values['repeating_skills_dmg']||"";
+                let type = values['repeating_skills_dmg-type']||"";
+                let toggle = values['repeating_skills_weapon-toggle'];
+                let hand = values['repeating_skills_hit-hand']||'';
+                let weaponDice = 0;
+                if (hand == "main") {
+                    weaponDice = values['main-dice']||0;
+                }
+                else {
+                    weaponDice = values['off-dice']||0;
+                }
+                let multiplier = parseInt(values['repeating_skills_weapon-count'])||0;
+                let damage = getDamage(dmg, bonus, type, toggle, hand, weaponDice, multiplier);
+                setAttrs({ 'repeating_skills_dmgExpress': damage });
+            });
+        });
+    });
+
+    <!--Skill Roll Button Pressed-->
+    on('clicked:repeating_skills:use-skill', (info) => {
+
+        //Acquire and check costs first
+        getAttrs(['repeating_skills_mana-cost','repeating_skills_stamina-cost','repeating_skills_class-cost','mana','stamina','class-pool'], function(values){
+            let mana = parseInt(values['mana'])||0;
+            let stamina = parseInt(values['stamina'])||0;
+            let classPool = parseInt(values['class-pool'])||0;
+
+            let manaCost = parseInt(values['repeating_skills_mana-cost'])||0;
+            let staminaCost = parseInt(values['repeating_skills_stamina-cost'])||0;
+            let classCost = parseInt(values['repeating_skills_class-cost'])||0;
+
+            let newMana = mana - manaCost;
+            let newStamina = stamina - staminaCost;
+            let newClass = classPool - classCost;
+
+            //Proceed with calculating damage, getting attack data, and rolling skill IF costs are met
+            if (!(newMana < 0) && !(newStamina < 0) && !(newClass < 0)) {
+
+                //Updates resources after cost is paid
+                setAttrs({
+                    'mana': newMana,
+                    'stamina': newStamina,
+                    'class-pool': newClass
+                });
+
+                //Gets attrs for damage calc and roll
+                getAttrs(['repeating_skills_hitTotal_s','repeating_skills_dmg','repeating_skills_dmg-stat','repeating_skills_dmg-type','repeating_skills_skill-name','repeating_skills_weapon-toggle','repeating_skills_weapon-count','main-dice','off-dice','repeating_skills_hit-hand'], function(values) {
+                    let ability = values['repeating_skills_dmg-stat']||"";
+                    getAttrs([`${ability}-mod_s`], function(value) {
+                        let attack = parseInt(values['repeating_skills_hitTotal_s']);
+                        let name = values['repeating_skills_skill-name']||"";
+                        let bonus = parseInt(value[`${ability}-mod_s`])||0;
+                        let dmg = values['repeating_skills_dmg']||"";
+                        let type = values['repeating_skills_dmg-type']||"";
+                        let toggle = values['repeating_skills_weapon-toggle'];
+                        let hand = values['repeating_skills_hit-hand']||'';
+                        let weaponDice = 0;
+                        if (hand == "main") {
+                            weaponDice = values['main-dice']||0;
+                        }
+                        else {
+                            weaponDice = values['off-dice']||0;
+                        }
+                        let multiplier = parseInt(values['repeating_skills_weapon-count'])||0;
+                        let damage = getDamage(dmg, bonus, type, toggle, hand, weaponDice, multiplier);
+
+                        //Rolls skill using skill template
+                        let rollBase = `&{template:skill} {{name=${name}}} {{attack=[[1d20 + ${attack}]] }} {{dmg-type=${type}}} {{damage=[[${damage}]]}}`;
+                        startRoll(rollBase, (results) => {
+                            let attackRoll = results.results.attack.result;
+                            let dmgRoll = results.results.damage.result;
+                            finishRoll(results.rollId,
+                            {
+                                attack: attackRoll,
+                                damage: dmgRoll,
+                            });
+                        });
+                    });
+                });
+
+                //Finally, adds skill cooldown to cooldown list
+                getAttrs(['repeating_skills_cooldown','repeating_skills_skill-name'], function(values) {
+                    let id = generateRowID();
+                    let attr = {};
+                    let name = values['repeating_skills_skill-name']||"";
+                    let cd = parseInt(values['repeating_skills_cooldown'])||0;
+                    attr[`repeating_cooldowns_${id}_cooldownName`] = name;
+                    attr[`repeating_cooldowns_${id}_turns`] = cd;
+                    setAttrs(attr);
+                });
+            }
+
+            //IF cost is NOT met, sends a default alert message in chat instead of all prior stuff
+            else {
+                startRoll("&{template:notif} {{message=You do not have the Mana, Stamina, or Class Pool required to use that skill!!}}", (results) => {
+                    finishRoll(results.rollId, {});
+                });
+            }
+        });
+    });
+
+    <!--FUNCTIONS GO BELOW THIS LINE-->
+
+    function getDamage(dmg, bonus, type, toggle, hand, weaponDice, multiplier) {
+        let damage = '';
+        if (toggle == 0) {
+            if (bonus != 0) {
+                damage = dmg + "+" + bonus + " " + type;
+            }
+            else {
+                damage = dmg + " " + type;
+            }
+        }
+        else {
+            let initialDice = parseInt(weaponDice)||1;
+            let multiDice = initialDice * multiplier;
+            let splitDice = weaponDice.split("d");
+            let multiWeaponString = '';
+            if(splitDice.length > 1) {
+                multiWeaponString = multiDice + "d" + splitDice[1];
+            }
+            else {
+                multiWeaponString = multiDice;
+            }
+            if (bonus != 0 && (dmg != 0 && dmg != '')) {
+                damage = multiWeaponString + "+" + dmg + "+" + bonus + " " + type;
+            }
+            else if ((dmg == 0 || dmg == '') && bonus != 0){
+                damage = multiWeaponString + "+" + bonus + " " + type;
+            }
+            else if ((dmg != 0 || dmg != '') && bonus == 0) {
+                damage = multiWeaponString + "+" + dmg + " " + type;
+            }
+            else {
+                damage = multiWeaponString + " " + type;
+            }
+        }
+        return damage;
+    }
+
+</script>

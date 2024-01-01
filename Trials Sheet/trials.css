@@ -1,0 +1,375 @@
+
+/* Set the min-width so that when the window is resized the look will stay consistant */
+
+.charsheet {
+	background-color: #f7dae8;
+	min-width: 800px;
+}
+
+/* Universal styling applied to all elements of these types */
+hr {
+	border: 0;
+	height: 2px;
+	background-image: linear-gradient(to right, rgb(209, 19, 19), rgb(241, 168, 43), rgb(20, 162, 20), rgb(43, 43, 197), rgb(132, 14, 217));
+}
+
+h2 {
+	font-size: 2em;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+label {
+	display: inline-block;
+	width: 31%;
+}
+
+input {
+	display: inline-block;
+	width: 165px;
+}
+
+img {
+	max-height: 100px;
+}
+
+textarea {
+	resize: vertical;
+}
+
+/* Targetted styling that only effects elements with these classes */
+input.sheet-short {
+	width: 25%;
+}
+
+select.sheet-dtype {
+    vertical-align: top;
+    width: 60px;
+}
+span.sheet-dee {
+	font-size: 1.4em;
+	font-weight: bold;
+	left: -36%;
+	padding-right: 4px;
+	position: relative;
+	top: 3px;
+}
+
+button.funButt {
+	/* background-color: rgb(180, 215, 248); */
+	background-image: linear-gradient(to right, rgba(209, 19, 19, 0.7), rgba(241, 168, 43, 0.7), rgba(20, 162, 20, 0.7), rgba(43, 43, 197, 0.7), rgba(132, 14, 217, 0.7));
+	color:rgba(0, 0, 0, 1);
+	padding: 17px 20px;
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 12px;
+}
+
+button.funButt2 {
+	/* background-color: rgb(180, 215, 248);
+	background-image: linear-gradient(to right, rgba(209, 19, 19, 0.7), rgba(241, 168, 43, 0.7), rgba(20, 162, 20, 0.7), rgba(43, 43, 197, 0.7), rgba(132, 14, 217, 0.7));
+	color:rgba(0, 0, 0, 1); */
+	padding: 1px 1px;
+	font-size: 20px;
+	vertical-align: middle;
+	/* font-weight: bold; */
+	border-radius: 5px;
+}
+
+/* Targetted styling that only effects elements contained within the stated class */
+.sheet-stats h3 {
+	display: inline-block;
+	text-align: left;
+}
+
+.sheet-stats h3:first-child {
+	margin-left: 35%;
+	margin-right: 15%;
+}
+
+.sheet-stats input {
+	margin-right: 8%;
+	width: 17%;
+}
+
+input[type="text"].sheet-short {
+	width: 35px;
+}
+input[type="text"].sheet-short2 {
+	width: 35px;
+	margin-right: 2em;
+}
+input[type="text"].shorty {
+	width: 110px;
+}
+
+/*the following is what makes the header/skill trees info display in a grid-like format*/
+.three-colh .col1 {
+	width: 25%;
+	float: left;
+}
+
+.three-colh .col2 {
+	width: 25%;
+	float: left;
+}
+
+.three-colh .col3 {
+	width: 25%;
+	float: left;
+}
+
+.three-colh .col4 {
+	width: 12em;
+	float: left;
+}
+
+.three-colh {
+	overflow: hidden;
+}
+
+.three-colh label {
+	display: block;
+}
+
+#biggy {
+	width: 5em;
+}
+
+/*the following is what makes the stats display in a grid-like format*/
+.three-col .col1 {
+	width: 105px;
+	float: left;
+}
+
+.three-col .col2 {
+	width: 105px;
+	float: left;
+}
+
+.three-col .col3 {
+	width: 105px;
+	float: left;
+}
+
+.three-col {
+	overflow: hidden;
+}
+
+.three-col label {
+	display: block;
+}
+
+/*flex box stuff*/
+.flexTape {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: justify;
+}
+
+.flexTape2 {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: justify;
+	justify-content: center;
+}
+
+.flex0{ /*equal padding&width defined*/
+	padding: 15px;
+	width: 28%;
+}
+.flex1{ /*equal padding*/
+	padding: 15px;
+}
+.flex2{ /*less on top*/
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 15px;
+}
+.flex3{ /*less on bottom and top*/
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+}
+.flex4{ /*only on left*/
+	padding-left: 15px;
+}
+.flex5{ /*horizontal only*/
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.flex6{ /*less on left and top*/
+	padding-left: 0px;
+	padding-right: 15px;
+	padding-top: 0px;
+	padding-bottom: 5px;
+}
+.flex7{
+	padding-right:10px;
+	width: 60%;
+}
+.flex8{
+	padding:10px;
+	width: 35%;
+}
+
+
+/*skill box formatting*/
+input.switch-show:not(:checked) ~ div.attack-format,
+input.switch-hide:not(:checked) ~ div.attack-format {
+    display: none;
+}
+
+/*coloring*/
+.str {
+	color:rgb(209, 19, 19)
+}
+
+.vit {
+	color:rgb(20, 162, 20)
+}
+
+.dex {
+	color:rgb(241, 168, 43)
+}
+
+.int {
+	color:rgb(43, 43, 197)
+}
+
+.env {
+	color:rgb(132, 14, 217)
+}
+
+/*conditional coloring*/
+.stam-color[value="0"] ~ div .stam-colored {color:rgb(209, 19, 19)}
+.stam-color[value="1"] ~ div .stam-colored {color:rgb(241, 168, 43)}
+
+
+/*skill roll template*/
+.sheet-rolltemplate-skill div.sheet-template-container {
+	background-color: #f7dae8;
+	border: 1px solid;
+	padding: 2px;
+}
+.sheet-rolltemplate-skill .sheet-template-header {
+	background-color: rgba(112, 32, 130,1);
+	padding: 2px;
+	line-height: 1.6em;
+	font-size: 1.2em;
+}
+.sheet-rolltemplate-skill div {
+	padding: 5px;
+}
+.sheet-rolltemplate-skill div:nth-child(odd) {
+	background-image: linear-gradient(to right, rgba(209, 19, 19, 0.7), rgba(241, 168, 43, 0.7), rgba(20, 162, 20, 0.7), rgba(43, 43, 197, 0.7), rgba(132, 14, 217, 0.7));
+	border-radius: 15px;
+	text-align: center;
+
+}
+.sheet-rolltemplate-skill div:nth-child(even) {
+	background-color: #f7dae8;
+	border-radius: 15px;
+	text-align: left;
+}
+.sheet-rolltemplate-skill .inlinerollresult  {
+	display: inline-block;
+	min-width: 1.5em;
+	text-align: center;
+	border: 2px solid white;
+	background-color: white;
+}
+.sheet-rolltemplate-skill .inlinerollresult.fullcrit {
+	border: 2px solid #3FB315;
+}
+.sheet-rolltemplate-skill .inlinerollresult.fullfail {
+	border: 2px solid #B31515;
+}
+.sheet-rolltemplate-skill .inlinerollresult.importantroll {
+	border: 2px solid #4A57ED;
+}
+
+/*stat roll template*/
+.sheet-rolltemplate-default td {
+	vertical-align: middle;
+  }
+  .sheet-rolltemplate-default td:first-child{ /*the result*/
+	font-weight: normal;
+	background-color: #f7dae8;
+	text-align: right;
+  }
+  
+  .sheet-rolltemplate-default table{ /*the number*/
+	/* border-collapse: separate; */
+	overflow: hidden;
+	background-color: #f7dae8;
+	text-align: left;
+  }
+  .sheet-rolltemplate-default caption { /*the title*/
+	text-align: center;
+	color: black;
+	font-size: 1.2em;
+	font-weight: bold;
+	background-color: white;
+	background-image: linear-gradient(to right, rgba(209, 19, 19, 0.7), rgba(241, 168, 43, 0.7), rgba(20, 162, 20, 0.7), rgba(43, 43, 197, 0.7), rgba(132, 14, 217, 0.7));
+	border-top-left-radius: 6% 50%;
+	border-top-right-radius: 6% 50%;
+  }
+  .sheet-rolltemplate-default table,
+  .sheet-rolltemplate-default tbody,
+  .sheet-rolltemplate-default table tr:last-of-type {
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+  }
+  .sheet-rolltemplate-default .inlinerollresult  {
+	display: inline-block;
+	min-width: 1.5em;
+	text-align: left;
+	border: 2px solid white;
+	background-color: white;
+}
+
+/*message roll template*/
+.sheet-rolltemplate-notif div.sheet-template-container {
+	background-color: #f7dae8;
+	border: 1px solid;
+	padding: 2px;
+}
+.sheet-rolltemplate-notif .sheet-template-header {
+	background-color: rgba(112, 32, 130,1);
+	padding: 2px;
+	line-height: 1.6em;
+	font-size: 1.2em;
+}
+.sheet-rolltemplate-notif div {
+	padding: 5px;
+}
+.sheet-rolltemplate-notif div:nth-child(odd) {
+	background-image: linear-gradient(to right, rgba(209, 19, 19, 0.7), rgba(241, 168, 43, 0.7), rgba(20, 162, 20, 0.7), rgba(43, 43, 197, 0.7), rgba(132, 14, 217, 0.7));
+	border-radius: 15px;
+	text-align: center;
+
+}
+.sheet-rolltemplate-notif div:nth-child(even) {
+	background-color: #f7dae8;
+	border-radius: 15px;
+	text-align: left;
+}
+.sheet-rolltemplate-notif .inlinerollresult  {
+	display: inline-block;
+	min-width: 1.5em;
+	text-align: center;
+	border: 2px solid white;
+	background-color: white;
+}
+.sheet-rolltemplate-notif .inlinerollresult.fullcrit {
+	border: 2px solid #3FB315;
+}
+.sheet-rolltemplate-notif .inlinerollresult.fullfail {
+	border: 2px solid #B31515;
+}
+.sheet-rolltemplate-notif .inlinerollresult.importantroll {
+	border: 2px solid #4A57ED;
+}
